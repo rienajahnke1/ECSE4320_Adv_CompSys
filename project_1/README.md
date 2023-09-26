@@ -95,3 +95,10 @@ As the plot shows, the trend is that the lower the cache miss ratio, the faster 
 
 
 ## PART FIVE
+
+
+The impact of TLB table miss ratio on the software speed preformance
+
+
+To solve this problem, I will run a set of experiments through bash (.sh) scripts using linux perf commands.
+
