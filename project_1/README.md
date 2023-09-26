@@ -69,6 +69,7 @@ To solve this problem, I will run a set of experiments through bash (.sh) script
 
 
 What each command line argument means ->
+
         stat                          Run a command and gather performance counter statistics
         
         -e, --event <event>           Event selector. use 'perf list' to list available events
@@ -79,7 +80,7 @@ What each command line argument means ->
         
         python3 ./mult_func.py        Runs the python script that we are measuring against
         
-        X00000                        If 100000, runs a function to do an inputed amount of multiplication 6 times, 200000 3                                         times, 300000 2 times, 600000 1 time. (explination of why below)
+        X00000                        If 100000, runs a function to do an inputed amount of multiplication 6 times, 200000 times, 300000 2 times, 600000 1 time. (explination of why below)
 
 
 testing
