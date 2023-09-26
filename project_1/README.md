@@ -83,8 +83,15 @@ What each command line argument means in part_four.sh ->
         X00000                        If 100000, runs a function to do an inputed amount of multiplication 6 times, 200000 times, 300000 2 times, 600000 1 time. (explination of why below)
 
 
+
 To show that the cache miss ratio impacts software speed, I decided to make a simple python scrpit that runs an imputed amount of different multiplication functions. The amount of multiplication done is the same every sample to keep it a constant. I chose 600000 because it is not too long or short to get good data. I initially set the script up so that the first execution ran 100000 6 times, then 200000 3 times, 300000 2 times and 600000 once because as the same function is being done over again, the miss ratio would theoretically decrease because the data was just used thus would already be in cache. But as I ran the function, the difference in cache missses did not consistently decrease enough to say it made a difference. I then added three more executions of 600000 to get more data with each run.
+
 
 
 <img width="535" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/7a653a75-9916-470d-be32-a974f85813e2">
 
+
+As the plot shows, the trend is that the lower the cache miss ratio, the faster the software runs (excluding three outliars I did not add to the graph).
+
+
+## PART FIVE
