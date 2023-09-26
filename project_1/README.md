@@ -104,3 +104,9 @@ To solve this problem, I will run a set of experiments through bash (.sh) script
 
 
 Very similar to part four except instead of parameter "L1-dcache-load-misses" I used "dTLB-loads-misses"
+
+
+<img width="516" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/2d73c2c5-6145-4187-a61f-b16129bf54ce">
+
+
+As the plot shows, the trend is that the lower the TLB miss ratio, the faster the software runs
