@@ -25,3 +25,6 @@ if __name__ == "__main__":
     		multi(300000)
 	if args.count == 600000:
     		multi(600000)
+    		
+	if args.count == 10000000:
+    		multi(10000000)
