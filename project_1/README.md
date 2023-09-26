@@ -1,7 +1,7 @@
 I am running this experiment against a AMD Ryzen 5 PRO 4650U which has 192KB in L1 cache, 3MB in L2 cache and 8MB in L3 cache.
 
 
-***PART ONE***
+##PART ONE
 
 
 The read/write latency of cache and main memory when the queue length is zero
