@@ -1,5 +1,6 @@
-For parts one, two and three, I am running this experiment against a AMD Ryzen 5 PRO 4650U which has 192KB in L1 cache, 3MB in L2 cache and 8MB in L3 cache.
+For parts one, two and three, I am running this experiment against a Windows OS, AMD Ryzen 5 PRO 4650U which has 192KB in L1 cache, 3MB in L2 cache and 8MB in L3 cache.
 
+Parts four and five are ran against Ubuntu 22.04.3 LTS OS, Intel Core i9-13900H processor ASUS Q540 laptop.
 
 ## PART ONE
 
@@ -61,8 +62,21 @@ MLC has not way to directly measure throughput vs latency, so I will be using th
 ## PART FOUR
 
 
-The impact of cache miss ratio 
+The impact of cache miss ratio on the software speed preformance
 
 
+To solve this problem, I will run a set of experiments through bash (.sh) scripts using linux perf commands.
+
+
+What each command line argument means ->
+    stat                          Run a command and gather performance counter statistics
+    -e, --event <event>           Event selector. use 'perf list' to list available events
+    cpu-clock                     Software event which captures cpu clock time
+    L1-dcache-load-misses         Hardware cache event that captures how many dcache load misses happened on L1
+    python3 ./mult_func.py        Runs the python script that we are measuring against
+    X00000                        If 100000, runs a function to do an inputed amount of multiplication 6 times, 200000 3                                         times, 300000 2 times, 600000 1 time. (explination of why below)
+
+
+    
 
 
