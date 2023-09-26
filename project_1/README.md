@@ -102,3 +102,5 @@ The impact of TLB table miss ratio on the software speed preformance
 
 To solve this problem, I will run a set of experiments through bash (.sh) scripts using linux perf commands.
 
+
+Very similar to part four except instead of parameter "L1-dcache-load-misses" I used 
