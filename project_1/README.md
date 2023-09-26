@@ -14,7 +14,7 @@ The command --loaded_latency prints the loaded memory latency of the platform. A
 
 <img width="613" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/f7cc5768-89d1-4af4-ba09-2179ca9cb87c">
 
-***PART TWO***
+## PART TWO
 
 
 The maximum bandwidth of the main memory under different data access granularity and different read vs write intensity ratios
@@ -25,6 +25,8 @@ To solve this problem, I will run a set of experiments through .batch scripts us
 
 The command --max_bandwidth prints the maximum memory bandwidth for various read-write ratios. The argument -l sets the stride size in bytes. MLC does not have a way to change access granularities
 
+<img width="732" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/de9770a2-b382-46ea-abdd-5ebce383c083">
+
 
 The bandwidth decreased as the read-write ratio increased (more writes). That shows us that writes are slower than reads. This is because you have to erase data before you write data, a step not needed for read functions. There can also be read caching, where freqently accessed data is stored up front thus a faster access time, where write caching is a more complex/longer process.
 
@@ -32,7 +34,7 @@ The bandwidth decreased as the read-write ratio increased (more writes). That sh
 The larger the stride size, the lower the bandwidth because increased stride size means data is read or written in larger chunks. This can cause data page changes to happen more frequently, which increases total row access latency. When total row access latency increases, it can limit the bandwidth becuase more time is spent accessing and updating data rows.
 
 
-***PART THREE***
+## PART THREE
 
 
 The trade-off between read/write latency and throughput of the main memory to demonstrate what the queuing theory predicts
@@ -52,3 +54,6 @@ The command --loaded_latency prints the loaded memory latency of the platform. A
 
 
 MLC has not way to directly measure throughput vs latency, so I will be using the bandwidth given by the --loaded_latency command and keep in mind that the real throughput will be slightly less.
+
+<img width="581" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/db1c70bc-ee39-4329-9314-53f77d1d2b7c">
+
