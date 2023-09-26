@@ -12,6 +12,7 @@ To solve this problem, I will run a set of experiments through .batch scripts us
 
 The command --loaded_latency prints the loaded memory latency of the platform. Argument -c0 sends the data to core 0, insuring single core use. -e keeps the pre-fetcher settings. -r makes sure the values are random. -b lets you choose the size of the buffer in Kib. -d lets you choose the load injection delay.
 
+<img width="613" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/f7cc5768-89d1-4af4-ba09-2179ca9cb87c">
 
 ***PART TWO***
 
