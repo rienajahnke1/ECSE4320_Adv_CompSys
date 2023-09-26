@@ -1,4 +1,4 @@
-I am running this experiment against a AMD Ryzen 5 PRO 4650U which has 192KB in L1 cache, 3MB in L2 cache and 8MB in L3 cache.
+For parts one, two and three, I am running this experiment against a AMD Ryzen 5 PRO 4650U which has 192KB in L1 cache, 3MB in L2 cache and 8MB in L3 cache.
 
 
 ## PART ONE
