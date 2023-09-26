@@ -57,3 +57,12 @@ MLC has not way to directly measure throughput vs latency, so I will be using th
 
 <img width="581" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/db1c70bc-ee39-4329-9314-53f77d1d2b7c">
 
+
+## PART FOUR
+
+
+The impact of cache miss ratio 
+
+
+
+
