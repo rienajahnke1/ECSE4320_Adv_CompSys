@@ -1,1 +1,1 @@
-Course Project #2: Matrix-Matrix Multiplication
+## Course Project #2: Matrix-Matrix Multiplication
