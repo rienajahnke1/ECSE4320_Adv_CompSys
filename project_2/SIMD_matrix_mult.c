@@ -34,9 +34,6 @@ double get_elapsed_time(struct timespec start, struct timespec end) {
 }
 
 int main() {
-	// Start the timer
-    struct timespec start_time, end_time;
-    clock_gettime(CLOCK_MONOTONIC, &start_time);
     
     // Ensure that both dimensions are multiples of 4
     int aligned_n = (N + 3) & ~3;
@@ -59,8 +56,19 @@ int main() {
         }
     }
     
+    // Start the timer
+    struct timespec start_time, end_time;
+    clock_gettime(CLOCK_MONOTONIC, &start_time);
+    
     // Perform matrix multiplication using SSE
     matrix_multiply_sse(A, B, C, aligned_n);
+    
+    // Stop the timer
+    clock_gettime(CLOCK_MONOTONIC, &end_time);
+    double elapsed_time = get_elapsed_time(start_time, end_time);
+    
+    // Display the elapsed time
+    printf("Elapsed Time: %.4f seconds\n", elapsed_time);
 
     // Print the result first five
     for (int i = 0; i < 5; i++) {
@@ -69,13 +77,6 @@ int main() {
         }
         printf("\n");
     }
-    
-     // Stop the timer
-    clock_gettime(CLOCK_MONOTONIC, &end_time);
-    double elapsed_time = get_elapsed_time(start_time, end_time);
-    
-    // Display the elapsed time
-    printf("Elapsed Time: %.4f seconds\n", elapsed_time);
 
     // Free allocated memory
     _mm_free(A);
