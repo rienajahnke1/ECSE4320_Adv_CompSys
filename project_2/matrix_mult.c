@@ -1,56 +1,80 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-#define ROW_A 3
-#define COL_A 2
-#define ROW_B 2
-#define COL_B 4
+#define N 5000
 
-void multiplyMatrices(int A[ROW_A][COL_A], int B[ROW_B][COL_B], int result[ROW_A][COL_B]) {
-    int i, j, k;
-
-    // Initialize the result matrix to 0
-    for (i = 0; i < ROW_A; ++i) {
-        for (j = 0; j < COL_B; ++j) {
-            result[i][j] = 0;
+void fillMatrix(float **matrix) {
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < N; ++j) {
+            matrix[i][j] = (float)(rand() % 5);
         }
     }
+}
 
-    // Perform matrix multiplication
-    for (i = 0; i < ROW_A; ++i) {
-        for (j = 0; j < COL_B; ++j) {
-            for (k = 0; k < COL_A; ++k) {
+void multiplyMatrices(float **A, float **B, float **result) {
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < N; ++j) {
+            result[i][j] = 0.0;
+            for (int k = 0; k < N; ++k) {
                 result[i][j] += A[i][k] * B[k][j];
             }
         }
     }
 }
 
-void printMatrix(int matrix[ROW_A][COL_B]) {
-    int i, j;
-    for (i = 0; i < ROW_A; ++i) {
-        for (j = 0; j < COL_B; ++j) {
-            printf("%d\t", matrix[i][j]);
-        }
-        printf("\n");
-    }
+double get_elapsed_time(struct timespec start, struct timespec end) {
+    return (end.tv_sec - start.tv_sec) + 1e-9 * (end.tv_nsec - start.tv_nsec);
 }
 
 int main() {
-    int matrixA[ROW_A][COL_A] = {{1, 2},
-                                 {3, 4},
-                                 {5, 6}};
+    // Allocate memory for matrices
+    float **matrixA = (float **)malloc(N * sizeof(float *));
+    float **matrixB = (float **)malloc(N * sizeof(float *));
+    float **resultMatrix = (float **)malloc(N * sizeof(float *));
 
-    int matrixB[ROW_B][COL_B] = {{7, 8, 9, 10},
-                                 {11, 12, 13, 14}};
+    for (int i = 0; i < N; ++i) {
+        matrixA[i] = (float *)malloc(N * sizeof(float));
+        matrixB[i] = (float *)malloc(N * sizeof(float));
+        resultMatrix[i] = (float *)malloc(N * sizeof(float));
+    }
 
-    int resultMatrix[ROW_A][COL_B];
+    // Fill matrices with random values
+    fillMatrix(matrixA);
+    fillMatrix(matrixB);
+
+    // Start the timer
+    struct timespec start_time, end_time;
+    clock_gettime(CLOCK_REALTIME, &start_time);
 
     // Perform multiplication
     multiplyMatrices(matrixA, matrixB, resultMatrix);
 
+    // Stop the timer
+    clock_gettime(CLOCK_REALTIME, &end_time);
+    double elapsed_time = get_elapsed_time(start_time, end_time);
+
     // Display the result
     printf("Result Matrix:\n");
-    printMatrix(resultMatrix);
+    for (int i = 0; i < 5; ++i) {
+        for (int j = 0; j < 5; ++j) {
+            printf("%f\t", resultMatrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Display the elapsed time
+    printf("Elapsed Time: %.4f seconds\n", elapsed_time);
+
+    // Free allocated memory
+    for (int i = 0; i < N; ++i) {
+        free(matrixA[i]);
+        free(matrixB[i]);
+        free(resultMatrix[i]);
+    }
+    free(matrixA);
+    free(matrixB);
+    free(resultMatrix);
 
     return 0;
 }

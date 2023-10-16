@@ -4,8 +4,8 @@
 #include <pthread.h>
 #include <time.h>
 
-#define N 10000
-#define thread_num 32
+#define N 5000
+#define thread_num 24
 
 typedef int MatrixElement;  // Default to integer
 
@@ -95,7 +95,7 @@ int main(int argc, char *argv[]) {
     clock_gettime(CLOCK_REALTIME, &end_time);
     double elapsed_time = get_elapsed_time(start_time, end_time);
 
-    // Display the result (you might want to comment this out for large matrices)
+    // Display the result
     printf("Result Matrix:\n");
     for (int i = 0; i < 5; ++i) {
         for (int j = 0; j < 5; ++j) {

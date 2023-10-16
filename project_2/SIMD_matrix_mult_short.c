@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 4000 //Matrix size
+#define N 10000 //Matrix size
 
 void matrix_multiply_sse_short(short *A, short *B, short *C, int n) {
 	

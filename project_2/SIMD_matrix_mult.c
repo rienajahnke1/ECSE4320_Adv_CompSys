@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 1000 //Matrix size
+#define N 10000 //Matrix size
 
 void matrix_multiply_sse(float *A, float *B, float *C, int n) {
 	
