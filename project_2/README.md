@@ -15,6 +15,8 @@ Thread number set to 24 becuase my CPU has 24 threads and no hyper-threading
 Command line arguments "FLOAT" and "SHORT" are used to run the file
 
 Graph of Matrix Size vs Run Time (s) 
+
+
 <img width="374" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/5f25c485-15ec-4560-89b5-6e3a64fa6c3b">
 
 
