@@ -45,6 +45,7 @@ Graph of Matrix Size vs Run Time (s)
 <img width="500" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/f85be98f-8b26-4ff1-810d-eb51c36260a0">
 
 
+The short does clearly better than the float because shorts use less memory bandwidth than floats, which can be processed simultaneously improving throughput.
 
 ## Cache Access Optimization
 
