@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 1000
+#define N 10000
 #define BLOCK_SIZE 32
 
 void matrixMultiply(float **A, float **B, float **C) {
