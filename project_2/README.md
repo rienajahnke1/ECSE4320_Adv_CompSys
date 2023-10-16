@@ -17,7 +17,7 @@ Command line arguments "FLOAT" and "SHORT" are used to run the file
 Graph of Matrix Size vs Run Time (s) 
 
 
-<img width="410" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/5f25c485-15ec-4560-89b5-6e3a64fa6c3b">
+<img width="500" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/eef444d1-c590-4f08-be46-d815400ccbc8">
 
 
 The time exponentially increases with size and the float runs slightly faster than the short.
