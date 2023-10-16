@@ -7,7 +7,8 @@ Using 4 byte floating points, here is the performance of each optimization techn
 
 
 
-<img width="532" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/9cb4d8ac-34d7-426d-8ac8-b06dc721c266">
+<img width="515" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/4ff2050d-1cc1-4128-ace8-abecc94d0497">
+
 
 
 
