@@ -31,7 +31,7 @@ SSE allows performing the same operation on multiple data elements simultaneousl
 
 Graph of Matrix Size vs Run Time (s) 
 
-<img width="410" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/f85be98f-8b26-4ff1-810d-eb51c36260a0">
+<img width="500" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/f85be98f-8b26-4ff1-810d-eb51c36260a0">
 
 
 
@@ -44,3 +44,5 @@ Loop blocking is a technique used in algorithms to enhance cache optimization. I
 
 Graph of Matrix Size vs Run Time (s) 
 
+
+<img width="500" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/60f5f63a-ae3a-4076-9755-42c5111e4f02">
