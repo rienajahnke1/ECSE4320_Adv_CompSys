@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 2000
+#define N 5000
 #define BLOCK_SIZE 64
 
 void matrixMultiply(short **A, short **B, int **C) {
