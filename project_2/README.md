@@ -3,6 +3,11 @@
 In this design project, I will use C moduals to carry out high speed matrix-matrix multiplication by explicitly utilizing multiple threads, x86 SIMD instructions (SSE) and techniques to minimize cache miss rate via restructuring data access patterns.
 
 
+Using 4 byte floating points, here is the performance of each optimization technique compared to eachother and without optimization. (I could not run the full 10000x10000 sized matrix without optimization)
+
+
+
+<img width="532" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/9cb4d8ac-34d7-426d-8ac8-b06dc721c266">
 
 
 
