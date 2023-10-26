@@ -29,7 +29,8 @@ The graph shows that read function is significantly faster than write. This is b
 
 To change the I/O depth, I modified the --iodepth paraemter from 1 - 1024
 
-<img width="550" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/336ff0d3-08aa-4ec1-b3c9-80575d0cbcdc">
+<img width="550" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/5996139e-5a1d-4d11-86be-35ce83b9c997">
+
 
 
 I/O depth que depth refers too how many input/output requests the storage can handle simultaneously. Up to around 12, The bandwidth increases, then a decrease happens into a plateau. I am assuming this is the case because up to 12, the system takes advantage of parralelism. After 12, the hardware cannot handle that many requests at once and slows the bandwidth down significantly, until it reaches its minimum speed.
