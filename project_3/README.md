@@ -4,7 +4,7 @@ I am using FIO commands to run experiments against an Ubuntu 22.04.3 LTS OS, Int
 
 Here is an example command that shows the structure and parameters of the FIO commands
 
-sudo fio --filename=/dev/sdb --rwmixread=70  --bs=1M --ioengine=libaio --runtime=20 --numjobs=1 --time_based --group_reporting --name=speed_job --iodepth=8 --size=1G --blocksize=4k
+  sudo fio --filename=/dev/sdb --rwmixread=70  --bs=1M --ioengine=libaio --runtime=20 --numjobs=1 --time_based --group_reporting --name=speed_job --iodepth=8 --size=1G --blocksize=4k
 
 
 ## PART ONE
