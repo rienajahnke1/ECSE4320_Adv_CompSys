@@ -19,9 +19,11 @@ To change the data access size, I modified the --blocksize parameter from 4k-128
 
 To change the read/write intensity ration, I modified the --rw paramenter to randread, randwrite, rwmixread=50, rwmixread=70
 
+<img width="470" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/f5ca7363-9f93-466c-83d9-e226014d2b87">
 
 ## PART THREE: I/O que depth
 
 To change the I/O depth, I modified the --iodepth paraemter from 1 - 1024
 
+<img width="505" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/336ff0d3-08aa-4ec1-b3c9-80575d0cbcdc">
 
