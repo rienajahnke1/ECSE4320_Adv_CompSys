@@ -15,7 +15,7 @@ To change the data access size, I modified the --bs/--blocksize parameter from 4
 <img width="460" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/433baf6f-7542-47c9-977a-035e4f3aeb7f">
 
 
-As shown in the graph above, as you increase blocksize, you increase bandwidth. But at somewhere inbetween 48k and 69k, the bandwidth starts to plateau. My prediction is that
+As shown in the graph above, as you increase blocksize, you increase bandwidth. This is expected because data is being written in larger chuncks, and bandwidth is how many bits are being transmitted in one second. But at somewhere inbetween 48k and 69k, the bandwidth starts to plateau. My prediction is that when the block size gets too big, it causes page changes to happen more frequently, which increases total row access latency. When total row access latency increases, it can limit the bandwidth becuase more time is spent accessing and updating data rows.
 
 ## PART TWO: read/write intensity ratio
 
