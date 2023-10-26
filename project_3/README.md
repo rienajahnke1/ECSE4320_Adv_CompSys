@@ -11,16 +11,16 @@ Here is an example command that shows the structure and parameters of the FIO co
 
 ## PART ONE: data access size
 
-modify --blocksize 4k-128k
+To change the data access size, I modified the --blocksize parameter from 4k-128k
 
 
-## PART TWO: read vs write intensity ratio
+## PART TWO: read/write intensity ratio
 
-modify --rw read, write, randrw, rwmixread=70
+To change the read/write intensity ration, I modified the --rw paramenter to randread, randwrite, rwmixread=50, rwmixread=70
 
 
 ## PART THREE: I/O que depth
 
-modify --iodepth 1 - 1024
+To change the I/O depth, I modified the --iodepth paraemter from 1 - 1024
 
 
