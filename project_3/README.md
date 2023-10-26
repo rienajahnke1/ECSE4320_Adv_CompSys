@@ -13,6 +13,7 @@ Here is an example command that shows the structure and parameters of the FIO co
 
 To change the data access size, I modified the --blocksize parameter from 4k-128k
 
+<img width="460" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/433baf6f-7542-47c9-977a-035e4f3aeb7f">
 
 ## PART TWO: read/write intensity ratio
 
