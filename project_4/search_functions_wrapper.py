@@ -1,9 +1,10 @@
 import ctypes
-#import numpy as np
+import numpy as np
 
 # Load the C library
 search_functions_lib = ctypes.CDLL('/home/rienajahnke/Adv_CompSys/ECSE4320_Adv_CompSys/project_4/search_functions.so')
 
+"""
 # Define the function signature
 search_functions_lib.count_and_find_indices.argtypes = [
     ctypes.c_char_p,   # encoded_data
@@ -37,3 +38,26 @@ def count_and_find_indices(encoded_data, search_key):
     indices_list = list(indices)[:matches]
 
     return matches, indices_list
+"""
+
+search_functions_lib.find_indices.argtypes = [
+    np.ctypeslib.ndpointer(dtype=np.int32, ndim=1, flags='C_CONTIGUOUS'),  # encoded_data
+    ctypes.c_int,     # search_key
+    np.ctypeslib.ndpointer(dtype=np.int32, ndim=1, flags='C_CONTIGUOUS'),  # indices
+    ctypes.c_int      # dataSize
+]
+search_functions_lib.find_indices.restype = ctypes.c_int
+
+def find_indices(encoded_data, search_key, indices):
+    dataSize = len(encoded_data)
+
+    # Call the C function
+    matches = search_functions_lib.find_indices(
+        encoded_data,
+        search_key,
+        indices,
+        dataSize
+    )
+
+    return matches
+

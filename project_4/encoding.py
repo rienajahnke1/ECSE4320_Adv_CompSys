@@ -13,7 +13,7 @@ def encode_chunk(chunk, dictionary):
 start_time = time.time()
 
 # Load the raw data from a .txt file
-file_path = "medbig.txt"
+file_path = "Column.txt"
 df = pd.read_csv(file_path, header=None, names=['RawColumn'])
 
 # Create a dictionary to store the mapping

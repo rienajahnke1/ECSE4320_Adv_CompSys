@@ -2,6 +2,7 @@
 #include <string.h>
 #include <immintrin.h>
 
+/*
 int count_and_find_indices(const int* encoded_data, int search_key, int* indices, int dataSize, int search_key_len) {
     int matches = 0;
 
@@ -25,3 +26,24 @@ int count_and_find_indices(const int* encoded_data, int search_key, int* indices
 
     return matches;
 }
+*/
+
+#include <stdio.h>
+#include <string.h>
+
+int find_indices(const char* encoded_data, const char* compressed_key, int* indices, int dataSize) {
+    int matches = 0;
+
+    // Iterate over the encoded data
+    for (int i = 0; i < dataSize; ++i) {
+        // Check if the compressed key matches the current position in the encoded data
+        if (memcmp(encoded_data + i, compressed_key, strlen(compressed_key)) == 0) {
+            indices[matches] = i;
+            matches++;
+        }
+    }
+
+    return matches;
+}
+
+
