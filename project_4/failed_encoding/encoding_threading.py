@@ -38,7 +38,7 @@ for i in range(num_threads):
     start = i * chunk_size
     end = (i + 1) * chunk_size if i < num_threads - 1 else len(raw_data)
     
-    # Create a DataFrame with the first (and only) column
+    # Create a DataFrame
     chunk_data = {0: raw_data[start:end]}
     chunk = pd.DataFrame(chunk_data)
     
@@ -53,11 +53,11 @@ for thread in threads:
 # Combine the results into a single DataFrame
 encoded_data_df = pd.concat(result_df)
 
-# Save the encoded data to a new file (e.g., a CSV file)
+# Save the encoded data to CSV file
 output_file = "encoded_data_file.csv"
 encoded_data_df.to_csv(output_file, index=False)
 
-# Optionally, save the dictionary to a separate file
+# Save the dictionary to a separate file
 dictionary_file = "dictionary.csv"
 pd.DataFrame(list(dictionary.items()), columns=["Value", "Code"]).to_csv(dictionary_file, index=False)
 

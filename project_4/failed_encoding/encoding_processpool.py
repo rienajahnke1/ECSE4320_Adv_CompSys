@@ -62,16 +62,15 @@ with ProcessPoolExecutor(max_workers=num_processes) as executor:
         if encoded_chunk is not None:
             result_df.append(encoded_chunk)
 
-# Check if there's data to concatenate before proceeding
 if result_df:
     # Combine the results into a single DataFrame
     encoded_data_df = pd.concat(result_df)
 
-    # Save the encoded data to a new file (e.g., a CSV file)
+    # Save the encoded data to a CSV file
     output_file = "encoded_data_file.csv"
     encoded_data_df.to_csv(output_file, index=False)
 
-    # Optionally, save the dictionary to a separate file
+    # Save the dictionary to a separate file
     dictionary_file = "dictionary.csv"
     pd.DataFrame(list(dictionary.items()), columns=["Value", "Code"]).to_csv(dictionary_file, index=False)
 else:

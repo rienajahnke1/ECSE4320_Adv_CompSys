@@ -24,11 +24,11 @@ dictionary = {value: index for index, value in enumerate(unique_values)}
 # Use Dask to parallelize encoding
 encoded_data_df = ddf.map_partitions(encode_chunk, dictionary=dictionary, meta={'CompressedEncoded': 'object'})
 
-# Save the encoded data to a new file (e.g., a CSV file)
+# Save the encoded data to CSV file
 output_file = "encoded_data_file.csv"
 encoded_data_df.compute().to_csv(output_file, index=False)
 
-# Optionally, save the dictionary to a separate file
+# Save the dictionary to a separate file
 dictionary_file = "dictionary.csv"
 pd.DataFrame(list(dictionary.items()), columns=["Value", "Code"]).to_csv(dictionary_file, index=False)
 
