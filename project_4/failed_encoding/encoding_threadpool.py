@@ -26,6 +26,8 @@ def read_chunks(file, chunk_size):
 
         yield pd.DataFrame({'RawColumn': chunk_data})
 
+start_time = time.time()
+
 # Load the raw data from a .txt file
 file_path = "medbig.txt"
 with open(file_path, "r") as file:
@@ -42,8 +44,6 @@ dictionary = {value: index for index, value in enumerate(unique_values)}
 # Split the data into chunks for multi-threading
 num_threads = 2
 chunk_size = 1000000
-
-start_time = time.time()
 
 # Use ThreadPoolExecutor to parallelize reading chunks
 with ThreadPoolExecutor(max_workers=num_threads) as executor:
