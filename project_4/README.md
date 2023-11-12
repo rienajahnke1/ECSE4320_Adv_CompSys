@@ -15,18 +15,15 @@ Dask is a parallel computing library that enables parallel and distributed compu
 
 **<ins>Multiprocessing</ins>**
 
-The Multiprocessing modual in python works by making each process run in its own python interpreter and has its own memory space, allowing parallel execution of tasks on different CPU cores. I chose to work with this modual because unlike Dask and threading, it is not bound by the GIL, enabling tru parallelism for CPU bound tasks. This means you can take advantage of the multiple cores in your computer. The downside of multiprocessing is that task parallelism can be more complex and not as efficient, which can slow down computing large datasets. It took 40.081 seconds for multiprocessing to execute the 241MB file, which is very close to Dask, and the second slowest option.
+The dask.multiprocessing modual in python works by making each process run in its own python interpreter and has its own memory space, allowing parallel execution of tasks on different CPU cores. I chose to work with this modual because unlike Dask threading, it is not bound by the GIL, enabling tru parallelism for CPU bound tasks. This means you can take advantage of the multiple cores in your computer. The downside of multiprocessing is that task parallelism can be more complex and not as efficient, which can slow down computing large datasets. It took 40.081 seconds for multiprocessing to execute the 241MB file, which is very close to Dask, and the second slowest option.
 
 **<ins>Threading</ins>**
 
 The Threading modual in python is used to create and manage threads. It allows for concurrent execution of tasks, making it useful for I/O bound operations. The issue with using the basic threading modual is that in CPython, the default implementation of Python, there is a Global Interpreter Lock (GIL) that allows only one thread excutes Python bytecode at a time. This means it is not suitible for achieveing true parallelism in CPU bound tasks. With that said, it is a straight forward modual with no extra processing happening in the background, which is why I think it did better than Dask with 28.549 seconds to execute the 241MB file.
 
-
 **<ins>Processpool</ins>**
 
-
-
-
+After the failed attempts, I looked into the concurrent.futures module for asynchronous execution of functions. The ProcessPoolExecutor withen concurrent.futures utilizes a pool of working processes for parallel execution. Because each process runs on its own interpreter, it allows for parallelism without the GIL. The downside to this is overhead may arrise when creating and managing seperate processes. All in all, it was significantly better than the Dask modual and the second best at 17.533 seconds when running the 241MB file.
 
 **<ins>Threadpool</ins>**
 
