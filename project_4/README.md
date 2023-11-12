@@ -13,8 +13,20 @@ To encode the data, I first played around with diffrent multi-threading techniqu
 
 Dask is a parallel computing library that enables parallel and distributed computing. It primarily relies on task parallelism rather than data parallelism. This means it breaks down computations into smaller tasks that can then be excuted independently. Dask was unfortunatily the slowest performer and took 40.373 seconds to run the 241MB file. It also had a "Killed" error when the 1GB file was used. This could be from human error, were I did not implement the function in the best way, or because of background computing Dask is running that could slow down excution. Dask also relies on the Python Global Interpreter Lock (GIL) which can limit CPU-bound tasks.
 
-**Multiprocessing**
+**<ins>Multiprocessing</ins>**
 
 The Multiprocessing modual in python works by making each process run in its own python interpreter and has its own memory space, allowing parallel execution of tasks on different CPU cores. I chose to work with this modual because unlike Dask and threading, it is not bound by the GIL, enabling tru parallelism for CPU bound tasks. This means you can take advantage of the multiple cores in your computer. The downside of multiprocessing is that task parallelism can be more complex and not as efficient, which can slow down computing large datasets. It took 40.081 seconds for multiprocessing to execute the 241MB file, which is very close to Dask, and the second slowest option.
 
-**Threading**
+**<ins>Threading</ins>**
+
+The Threading modual in python is used to create and manage threads. It allows for concurrent execution of tasks, making it useful for I/O bound operations. The issue with using the basic threading modual is that in CPython, the default implementation of Python, there is a Global Interpreter Lock (GIL) that allows only one thread excutes Python bytecode at a time. This means it is not suitible for achieveing true parallelism in CPU bound tasks. With that said, it is a straight forward modual with no extra processing happening in the background, which is why I think it did better than Dask with 28.549 seconds to execute the 241MB file.
+
+
+**<ins>Processpool</ins>**
+
+
+
+
+
+**<ins>Threadpool</ins>**
+
