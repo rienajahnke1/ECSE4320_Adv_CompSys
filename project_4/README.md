@@ -5,4 +5,7 @@ In this project, I will implement dictionary codec by first encoding a raw colum
 
 
 ## Encoding
-To encode the data, I used 
+To encode the data, I first played around with diffrent multi-threading techniques in python to see which process is the most efficent, and could handle the large dataset.
+
+<img width="500" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/7724c2ae-1f79-4fa5-bcaa-a4016ffa5524">
+
