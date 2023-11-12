@@ -19,11 +19,13 @@ The dask.multiprocessing modual in python works by making each process run in it
 
 **<ins>Threading</ins>**
 
-The Threading modual in python is used to create and manage threads. It allows for concurrent execution of tasks, making it useful for I/O bound operations. The issue with using the basic threading modual is that in CPython, the default implementation of Python, there is a Global Interpreter Lock (GIL) that allows only one thread excutes Python bytecode at a time. This means it is not suitible for achieveing true parallelism in CPU bound tasks. With that said, it is a straight forward modual with no extra processing happening in the background, which is why I think it did better than Dask with 28.549 seconds to execute the 241MB file.
+The Threading modual in python is used to create and manage threads. It allows for concurrent execution of tasks, making it useful for I/O bound operations. The issue with using the basic threading modual is that in CPython, the default implementation of Python, there is a Global Interpreter Lock (GIL) that allows only one thread excutes Python bytecode at a time. This means it is not suitible for achieveing true parallelism in CPU bound tasks. With that said, it is a straight forward modual with no extra processing happening in the background, which is why I think it did better than Dask with 28.549 seconds to execute the 241MB file. Though it was faster, it still failed when the 1GB file was attempted.
 
 **<ins>Processpool</ins>**
 
-After the failed attempts, I looked into the concurrent.futures module for asynchronous execution of functions. The ProcessPoolExecutor withen concurrent.futures utilizes a pool of working processes for parallel execution. Because each process runs on its own interpreter, it allows for parallelism without the GIL. The downside to this is overhead may arrise when creating and managing seperate processes. All in all, it was significantly better than the Dask modual and the second best at 17.533 seconds when running the 241MB file.
+After the failed attempts, I looked into the concurrent.futures module for asynchronous execution of functions. The ProcessPoolExecutor withen concurrent.futures utilizes a pool of working processes for parallel execution. Because each process runs on its own interpreter, it allows for parallelism without the GIL. The downside to this is overhead may arrise when creating and managing seperate processes. All in all, it was significantly better than the Dask modual and the second best at 17.533 seconds when running the 241MB file. Though it was faster, it still failed when the 1GB file was attempted.
 
 **<ins>Threadpool</ins>**
+
+The concurrent.futures modual seemed to be the right path so I tried ThreadPoolExecutor, another implementation of the executor interface. Instead of the ProcessPool, ThreadPool creates a pool of worker threads to execute tasks concurrently, but is now subjected to the GIL. I used the "map" method to execute the encoding function over the values. Threadpool was the only technique that could handle the 1GB file and executed the 241MB file the fastest at 2.534 seconds. 
 
