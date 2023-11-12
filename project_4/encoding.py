@@ -10,6 +10,8 @@ def encode_chunk(chunk, dictionary):
     chunk['CompressedEncoded'] = chunk['EncodedColumn'].apply(varint.encode)
     return chunk[['CompressedEncoded']]
 
+start_time = time.time()
+
 # Load the raw data from a .txt file
 file_path = "medbig.txt"
 df = pd.read_csv(file_path, header=None, names=['RawColumn'])
@@ -23,8 +25,6 @@ num_threads = 2
 chunk_size = 500000
 chunks = [df.iloc[i:i+chunk_size] for i in range(0, len(df), chunk_size)]
 
-start_time = time.time()
-
 # Use ThreadPoolExecutor to parallelize encoding
 with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor:
     results = list(executor.map(encode_chunk, chunks, [dictionary]*num_threads))
@@ -36,7 +36,7 @@ encoded_data_df = pd.concat(results)
 output_file_feather = "encoded_data_file.feather"
 encoded_data_df.to_feather(output_file_feather)
 
-# Optionally, save the dictionary to a separate file
+# save the dictionary to a separate file
 dictionary_file = "dictionary.csv"
 pd.DataFrame(list(dictionary.items()), columns=["Value", "Code"]).to_csv(dictionary_file, index=False)
 
