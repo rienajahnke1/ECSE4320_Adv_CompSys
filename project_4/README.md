@@ -35,7 +35,7 @@ The concurrent.futures modual seemed to be the right path so I tried ThreadPoolE
   **Conclusion:** 
 I chose to use the Pandas Dataframe for the dictionary because of its ease of use, vectorized operations and integration with numpy (might use in query part). This made it easier to combine the encoded results onto a single dataframe and save the dictionary on a csv file and the encoded data on a feather file.
 A feather file is a binary columnar data storage format file type which was the best choice for storing the large integer encoded dataset. This is because each column is stored together and has memory mapped I/O, allowing fast access to data and higher performance. It's downsides from being so fast are that it only supports scalar value types, only dictionary-encoded types are supported and it is not designed for long term storage. None of these issues effect this project so it was the perfect file format to use. 
-The integer compression modual I used was varint - a method of encoding integers using a variable number of bytes. It uses fewer bytes to represent smaller numbers and is often used in data serialization where compactness is important. That is why I chose varint and becuase of it's ease of use.
+The integer compression modual I used was varint - a method of encoding integers using a variable number of bytes. It uses fewer bytes to represent smaller numbers and is often used in data serialization where compactness is important. That is why I chose varint and becuase of it's ease of use. The integer-compression plus using the feather file type compacted the encoded dataset from 1GB to 6.6MB (thats huge!).
 
 ## Query
 
