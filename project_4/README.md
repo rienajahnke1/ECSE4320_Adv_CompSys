@@ -7,7 +7,7 @@ In this project, I will implement dictionary codec by first encoding a raw colum
 ## Encoding
 To encode the data, I first played around with diffrent multi-threading techniques in python to see which process is the most efficent. The tests ran below was against a 241.6MB file. I could not use the 1GB file to benchmark becuase some teqniuqes could not handle the size of the file and return a "Killed" error. All failed files are in folder "failed_encoding".
 
-<img width="500" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/3abe97dc-5724-45ff-a608-bbd0e2ea1e38">
+<img width="600" alt="image" src="https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/3abe97dc-5724-45ff-a608-bbd0e2ea1e38">
 
 
 **<ins>Dask</ins>**
@@ -28,7 +28,7 @@ After the failed attempts, I looked into the concurrent.futures module for async
 
 **<ins>Threadpool</ins>**
 
-The concurrent.futures modual seemed to be the right path so I tried ThreadPoolExecutor, another implementation of the executor interface. Instead of the ProcessPool, ThreadPool creates a pool of worker threads to execute tasks concurrently, but is now subjected to the GIL. I used the "map" method to execute the encoding function over the values. Threadpool was the only technique that could handle the 1GB file and executed the 241MB file the fastest at 2.534 seconds. 
+The concurrent.futures modual seemed to be the right path so I tried ThreadPoolExecutor, another implementation of the executor interface. Instead of the ProcessPool, ThreadPool creates a pool of worker threads to execute tasks concurrently, but is now subjected to the GIL. I used the "map" method to execute the encoding function over the values. Threadpool was the only technique that could handle the 1GB file (executes in about 40 seconds) and executed the 241MB file the fastest at 2.534 seconds.
 
 
 
