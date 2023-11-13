@@ -44,3 +44,5 @@ Following the steps above, without the implementation of SIMD instructions, the 
 
 <img width="600" alt="image" src=https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/0f4c18a6-0345-469a-864b-e124c6da6b7d>
 
+I implementing prefix searching by using the str.contains method in pandas. I then also had to convert the 'CompressedEncoded' column into a hexidecimal representation to avoid a UnicodeDecodeError. The returned format is the same as above and time is about 1.7-3 seconds depending on how many instances of the string are found. The more instances the longer the time becuase it is more data having to be saved and printed out. This file is called query_prefex.py.
+
