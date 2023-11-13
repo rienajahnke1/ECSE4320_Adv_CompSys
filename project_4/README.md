@@ -58,7 +58,13 @@ I implementing prefix searching by using the str.contains method in pandas. I th
 **With SIMD Instructions**
 SIMD instructions is a very low level performance teqnique, which is why Python has no direct implementation of it. It may be running in the background of some functions but it is also hardware specific so can be hard to do. To get around this, I used a wrapper file in python (search_functions_wrapper.py) to translate a .c search function (search_functions.c) to call in my main python file (query.py).
 
-To compile the wrapper and c file, 
+To compile the wrapper and c file, I used this command:
+
+ gcc -o search_functions.so -shared -fPIC search_functions.c
+
 
 After many hours of trying to get it to work, I could not get around the seg fault error so tried another teqnique, using .pyx files
 
+To compile the Cython file, I used this command:
+
+ cythonize -i search_functions.pyx
