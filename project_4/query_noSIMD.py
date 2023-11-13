@@ -1,5 +1,6 @@
 import pandas as pd
 import varint
+import time
 
 def find_and_decode(search_string, dictionary_file, encoded_data_file):
     # Load the dictionary
@@ -25,12 +26,18 @@ def find_and_decode(search_string, dictionary_file, encoded_data_file):
     else:
         print(f"Occurrences of the encoded value {encoded_value} found at indices: {indices}")
 
-# Replace these file paths with your actual file paths
 dictionary_file_path = "dictionary.csv"
 encoded_data_file_path = "encoded_data_file.feather"
 
 # Get the search string from the user
 search_string = input("Enter the string to search: ")
 
+start_time = time.time()
+
 # Perform the search and decoding
 find_and_decode(search_string, dictionary_file_path, encoded_data_file_path)
+
+end_time = time.time()
+total_time = end_time - start_time
+print(total_time)
+
