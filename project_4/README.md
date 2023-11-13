@@ -60,11 +60,14 @@ SIMD instructions is a very low level performance teqnique, which is why Python 
 
 To compile the wrapper and c file, I used this command:
 
- gcc -o search_functions.so -shared -fPIC search_functions.c
+    gcc -o search_functions.so -shared -fPIC search_functions.c
+
+This gcc compiles the C file and creates a .so (shared object) file 'search_functions.so' which is a dynamic link library (DLL) used in Unix that contains compiled code that can be shared and used by multiple programs (windows .dll file). This allows Python to intaract with libraries like 'ctypes' and 'bridge' the two languages together.
 
 
-After many hours of trying to get it to work, I could not get around the seg fault error so tried another teqnique, using .pyx files
+
+After many hours of trying to get it to work, I could not get around the seg fault error so tried another teqnique, using .pyx files. A .pyx file is a Cython file, which is a programming language that makes easy to write C extensions for Python. I tried to utilize the advantages of the language to implement C SIMD instructions but also kept ending in a seg fault.
 
 To compile the Cython file, I used this command:
 
- cythonize -i search_functions.pyx
+    cythonize -i search_functions.pyx
