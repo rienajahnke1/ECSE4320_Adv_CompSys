@@ -48,12 +48,17 @@ Following the steps above, without the implementation of SIMD instructions, the 
 
 
 
-I read the feather file using the pd.read_feather function. I belive this query is so fast because of the underlying 
+I read the feather file using the pd.read_feather function. I belive this query is so fast because of the underlying pandas/feather functions that were made for high speed performance. Some of these functions may implement SIMD instructions but I could not find for sure in documentation.
 
 
 
 I implementing prefix searching by using the str.contains method in pandas. I then also had to convert the 'CompressedEncoded' column into a hexidecimal representation to avoid a UnicodeDecodeError. The returned format is the same as above and time is about 1.7-3 seconds depending on how many instances of the string are found. The more instances the longer the time becuase it is more data having to be saved and printed out. This file is called query_prefex.py.
 
 
+**With SIMD Instructions**
+SIMD instructions is a very low level performance teqnique, which is why Python has no direct implementation of it. It may be running in the background of some functions but it is also hardware specific so can be hard to do. To get around this, I used a wrapper file in python (search_functions_wrapper.py) to translate a .c search function (search_functions.c) to call in my main python file (query.py).
 
+To compile the wrapper and c file, 
+
+After many hours of trying to get it to work, I could not get around the seg fault error so tried another teqnique, using .pyx files
 
