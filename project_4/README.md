@@ -52,7 +52,7 @@ I read the feather file using the pd.read_feather function. I belive this query 
 
 
 
-I implementing prefix searching by using the str.contains method in pandas. I then also had to convert the 'CompressedEncoded' column into a hexidecimal representation to avoid a UnicodeDecodeError. The returned format is the same as above and time is about 1.7-3 seconds depending on how many instances of the string are found. The more instances the longer the time becuase it is more data having to be saved and printed out. This file is called query_prefex.py.
+I implemented prefix searching by using the str.contains method in pandas. I then also had to convert the 'CompressedEncoded' column into a hexidecimal representation to avoid a UnicodeDecodeError. The returned format is the same as above and time is about 1.7-3 seconds depending on how many instances of the string are found. The more instances the longer the time becuase it is more data having to be saved and printed out. This file is called query_prefex.py.
 
 
 **With SIMD Instructions**
@@ -71,3 +71,6 @@ After many hours of trying to get it to work, I could not get around the seg fau
 To compile the Cython file, I used this command:
 
     cythonize -i search_functions.pyx
+
+
+In the end, I could not successfully implement a clear use of SIMD instructions for the query but the modules and file types I used has other high-speed preformance algorithms working in the background, making me able to query this large dataset in a very short amount of time.
