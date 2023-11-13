@@ -28,9 +28,6 @@ int count_and_find_indices(const int* encoded_data, int search_key, int* indices
 }
 */
 
-#include <stdio.h>
-#include <string.h>
-
 int find_indices(const char* encoded_data, const char* compressed_key, int* indices, int dataSize) {
     int matches = 0;
 
