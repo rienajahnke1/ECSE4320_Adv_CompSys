@@ -42,5 +42,5 @@ To Query the encoded data file against the dictionary, I first take in the desir
 **No SIMD instructions**
 Following the steps above, without the implementation of SIMD instructions, the search and return for string "nsmgpo" took about 0.461 seconds. An picture of results below.
 
-<img width="500" alt="image" src=https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/0f4c18a6-0345-469a-864b-e124c6da6b7d>
+<img width="600" alt="image" src=https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/0f4c18a6-0345-469a-864b-e124c6da6b7d>
 
