@@ -41,8 +41,10 @@ The integer compression modual I used was varint - a method of encoding integers
 
 To Query the encoded data file against the dictionary, I first take in the desired string to search, check if it exisits in the dictionary, use the same encoding teqnique as above (varint), then use the encoded value to find all the indecies withen the encoded dataset. 
 
-**No SIMD instructions**
+**No SIMD instructions:**
 Following the steps above, without the implementation of SIMD instructions, the search and return for string "nsmgpo" took about 0.461 seconds. An picture of results below.
+
+
 
 <img width="600" alt="image" src=https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/0f4c18a6-0345-469a-864b-e124c6da6b7d>
 
@@ -55,10 +57,12 @@ I read the feather file using the pd.read_feather function. I belive this query 
 I implemented prefix searching by using the str.contains method in pandas. I then also had to convert the 'CompressedEncoded' column into a hexidecimal representation to avoid a UnicodeDecodeError. The returned format is the same as above and time is about 1.7-3 seconds depending on how many instances of the string are found. The more instances the longer the time becuase it is more data having to be saved and printed out. This file is called query_prefex.py.
 
 
+
 <img width="600" alt="image" src=https://github.com/rienajahnke1/ECSE4320_Adv_CompSys/assets/57211117/f62d566a-1da5-408a-a6be-66e507c72e04>
 
 
-**With SIMD Instructions**
+
+**With SIMD Instructions:**
 SIMD instructions is a very low level performance teqnique, which is why Python has no direct implementation of it. It may be running in the background of some functions but it is also hardware specific so can be hard to do. To get around this, I used a wrapper file in python (search_functions_wrapper.py) to translate a .c search function (search_functions.c) to call in my main python file (query.py).
 
 To compile the wrapper and c file, I used this command:
