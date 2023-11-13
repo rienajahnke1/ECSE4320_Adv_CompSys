@@ -30,7 +30,7 @@ def find_and_decode(search_string, dictionary_file, encoded_data_file):
     else:
         print(f"Occurrences of the encoded value {encoded_value} found at indices: {indices}")
 
-# Replace these file paths with your actual file paths
+
 dictionary_file_path = "dictionary.csv"
 encoded_data_file_path = "encoded_data_file.feather"
 

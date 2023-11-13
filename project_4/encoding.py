@@ -5,7 +5,7 @@ import time
 
 # Function to perform dictionary encoding and integer compression on a chunk of data
 def encode_chunk(chunk, dictionary):
-    chunk = chunk.copy()  # Explicitly create a copy
+    chunk = chunk.copy() 
     chunk['EncodedColumn'] = chunk['RawColumn'].map(dictionary)
     chunk['CompressedEncoded'] = chunk['EncodedColumn'].apply(varint.encode)
     return chunk[['CompressedEncoded']]
