@@ -29,3 +29,7 @@ After the failed attempts, I looked into the concurrent.futures module for async
 
 The concurrent.futures modual seemed to be the right path so I tried ThreadPoolExecutor, another implementation of the executor interface. Instead of the ProcessPool, ThreadPool creates a pool of worker threads to execute tasks concurrently, but is now subjected to the GIL. I used the "map" method to execute the encoding function over the values. Threadpool was the only technique that could handle the 1GB file and executed the 241MB file the fastest at 2.534 seconds. 
 
+
+
+  **Conclusion** 
+I chose to use the Pandas Dataframe for the dictionary because of its ease of use, vectorized operations and integration with numpy (might use in query part). This made it easier to combine the encoded results onto a single dataframe and save the dictionary on a csv file and the encoded data on a feather file. A feather file is a binary columnar data storage format file type which was the best choice for storing the large encoded
