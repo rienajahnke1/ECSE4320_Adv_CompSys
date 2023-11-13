@@ -37,4 +37,4 @@ I chose to use the Pandas Dataframe for the dictionary because of its ease of us
 
 ## Query
 
-To Query the encoded data file against the dictionary, I first take in the desired string to search, check if it exisits in the dictionary, use the same encoding teqnique as above (varint), then use the encoded value to find all the indecies 
+To Query the encoded data file against the dictionary, I first take in the desired string to search, check if it exisits in the dictionary, use the same encoding teqnique as above (varint), then use the encoded value to find all the indecies withen the encoded dataset. 
