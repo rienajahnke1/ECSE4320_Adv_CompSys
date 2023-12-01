@@ -6,3 +6,6 @@ For my final project, I wanted to learn more about the Linux kernel while implem
 ## Supporing Documentation
 
 https://people.computing.clemson.edu/~jmarty/courses/commonCourseContent/Module5-NetworkConceptsAppliedToLinuxNetworkProgramming/AdditionalMaterial/linux_device_driver_tutorial.pdf
+
+https://www.kernel.org/doc/html/latest/driver-api/index.html
+
