@@ -1,0 +1,14 @@
+with file system export
+
+notes:
+
+i wrote kernel memory buffer
+practical application:
+	someone who writes code in userspace needs to interact with hardware
+	sysfs entries
+	
+	only way to interact with hardware is through the kernel
+	
+proc to connect
+when doing that, user space has no concept of bv memory is protect
+kernel does in pages (mmu) each page is 4kb (4096)
