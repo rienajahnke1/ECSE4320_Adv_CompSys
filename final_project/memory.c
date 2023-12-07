@@ -2,7 +2,7 @@
 #include <linux/module.h>
 #include <linux/fs.h>
 #include <linux/uaccess.h>
-#include <linux/proc_fs.h>  // Include proc_fs header
+#include <linux/proc_fs.h>  
 
 MODULE_LICENSE("Dual BSD/GPL");
 
@@ -73,7 +73,6 @@ static struct proc_dir_entry *memory_proc_entry;
 static int __init memory_init(void) {
     int result;
 
-    /* Registering device */
     result = register_chrdev(memory_major, "memory", &memory_fops);
     if (result < 0) {
         pr_err("memory: cannot obtain major number %d\n", memory_major);
@@ -96,7 +95,6 @@ static void __exit memory_exit(void) {
     // Remove the proc entry
     proc_remove(memory_proc_entry);
 
-    /* Unregistering device */
     unregister_chrdev(memory_major, "memory");
     pr_info("Memory module exited\n");
 }
